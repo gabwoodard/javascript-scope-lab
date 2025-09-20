@@ -1,22 +1,21 @@
 // Step 1: Variable Data (global scope)
-let burgers = ['Hamburger', 'Cheeseburger'];
+const burgers = ['Hamburger', 'Cheeseburger'];
 let featuredDrink = 'Strawberry Milkshake';
 
 // Step 2: Function and Block
 function addBurger() {
-  const newBurger = 'Flatburger';   // function-scoped
-  burgers.push(newBurger);          // add to burgers in this order
+  const newBurger = 'Flatburger';
+  burgers.push(newBurger);
 }
 
 // Step 3: Variable Declaration and Scope
-if (true) {                         // always executes
-  let anotherNewBurger = 'Maple Bacon Burger'; // block-scoped
-  burgers.push(anotherNewBurger);              // then push
+if(true){
+  const anotherNewBurger = 'Maple Bacon Burger';
+  burgers.push(anotherNewBurger);
 }
 
 function changeFeaturedDrink() {
   featuredDrink = 'The JavaShake';
 }
 
-// export for tests
 module.exports = { burgers, featuredDrink, addBurger, changeFeaturedDrink };
